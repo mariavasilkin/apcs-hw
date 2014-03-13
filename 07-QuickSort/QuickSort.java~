@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 public class QuickSort {
     public static Integer[]  quicksort (Integer[]  L) {
 	if (L.length <= 1) {
@@ -8,11 +8,11 @@ public class QuickSort {
 	ArrayList <Integer> lo = new ArrayList <Integer> ();
 	ArrayList <Integer>  hi = new ArrayList <Integer> ();
 	int numPivots = 0; //if there are multiple values == to pivot
-	for (int i = 0; i < L.length - 1; i++) {
-	    if (L[i].compareTo(L[pivot]) < 0) {
-		lo.add(L[i]);
+	for (int i : L) {
+	    if (L[i] < L[pivot]) {
+		lo.add( L[i]);
 	    }
-	    else if (L[i].compareTo(L[pivot]) > 0) {
+	    else if (L[i] > L[pivot]) {
 		hi.add(L[i]);
 	    }
 	    else {
@@ -27,13 +27,12 @@ public class QuickSort {
 	Integer[] ans = new Integer[L.length];
 	R1 = quicksort(la);
 	R2 = quicksort(ua);
-	for (int i = 0; i < (ans.length - 1); i++) {
+	for (int i : ans) {
 	    if ( i < R1.length) {
 		ans[i] = R1[i];
 	    }
-	    else if (i >= R1.length && i < (R1.length + numPivots)) {
+	    else if (i >= R1.length && i <= (R1.length + numPivots)) {
 		ans[i] = pivot;
-
 	    }
 	    else {
 		ans[i] = R2[i];
@@ -44,20 +43,13 @@ public class QuickSort {
 	
     }
 
-
     public static void main (String[] args) {
-	int size = 10;
-	Random rnd = new Random();
-	Integer[] b = new Integer[size];
-	for (int i=0;i<size;i++)
-	    b[i]=new Integer(rnd.nextInt(100));
-	System.out.println("Unsorted:");
-	System.out.println(Arrays.toString(b));
-	Integer[] sorted = quicksort(b);
-	System.out.println("Sorted:");
-	/*System.out.println(Arrays.toString(a));
-	System.out.println(a);
-	System.out.println(quicksort(a));*/
+	Integer[] a = new Integer[20];
+	for (int i=0;i<20;i++)
+	    a[i] = (int)(Math.random() * 100);
+	    //a[i]=new Integer(rnd.nextInt(100));
+	//System.out.println(Arrays.toString(a));
+	System.out.println(quicksort(a));
     }
 }
 	
