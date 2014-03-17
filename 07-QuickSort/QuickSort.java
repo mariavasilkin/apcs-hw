@@ -40,8 +40,8 @@ public class QuickSort {
 	    }
 	}
 	return ans;
-	
-	
+
+
     }
 
 
@@ -60,8 +60,3 @@ public class QuickSort {
 	System.out.println(quicksort(a));*/
     }
 }
-	
-	     
-
-		
-		

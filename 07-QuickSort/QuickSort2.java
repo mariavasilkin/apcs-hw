@@ -35,12 +35,14 @@ public class QuickSort2 {
 
 	//Loop through the array, moving the wall and stuff
 	for (int i = L; i < R; i++) {
-	    if (a[i] > pivot) {
+	    if (a[i] > a[pivot]) {
 		int b = a[i];
 		a[i] = a[wall];
 		a[wall] = b;
-		wall ++;
 	    }
+	    else
+		wall++;
+	    
 	}
 
 	//Swap pivot with  wall:
