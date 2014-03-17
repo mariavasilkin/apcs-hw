@@ -63,10 +63,14 @@ public class QuickSort2 {
 
 
 	//For actual Quicksort:
-	if (wall >= 2) 
-	    partition(a, 0, wall);
-	if (wall != a.length-1)
-	    partition(a, wall, R);
+	if (wall >= 2){ 
+	    R = wall;
+	    partition(a, L, R );
+	}
+	if (wall != (R-L)-1) {
+	    L = wall;
+	    partition(a,L, R);
+	}
 	return;
 	
     }
