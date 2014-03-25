@@ -1,15 +1,18 @@
 public class MyLinkedList {
-    private Node dummy; 
     private Node head;
+    private int length;
     public MyLinkedList() {
 	Node head = new Node("");
-	dummy.setNext(head);
+	length = 0;
     }
     public void add(String s) {
-	Node temp = new Node(s);
-	//head = temp;`
-	temp.setNext(head);
-	head = temp;
+	Node temp = head;
+	Node n = new Node(s);
+	for (int i = 0; i < length; i++) {
+	    temp = temp.getNext(); 
+	}
+	temp.setNext(n);
+        length ++;
     }
     public String toString() {
 	String s;
@@ -21,8 +24,7 @@ public class MyLinkedList {
 	}
 	return s;
     }
-
-    
+   
     public void add (int i, String s) {
 	Node b = new Node(s);
 	Node temp = head;
@@ -31,6 +33,7 @@ public class MyLinkedList {
 	}
         b.setNext(temp.getNext());
 	temp.setNext(b);
+	length ++;
     }
 
     public String get(int i) {
@@ -67,6 +70,7 @@ public class MyLinkedList {
 	}
 	String ans= temp.getNext().getData();
 	temp.setNext(temp.getNext().getNext());
+	length --;
 	return ans;
     }
     
