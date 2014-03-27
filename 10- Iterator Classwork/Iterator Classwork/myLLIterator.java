@@ -12,8 +12,7 @@ public class myLLIterator <E> implements Iterator<E> {
     }
     //I rewrote these from memory/did them at home, so they might not match what I did in class with Aida
     public E next() {
-        previous = currentNode
-;
+        previous = currentNode;
 	currentNode = currentNode.getNext();
 	return previous.getData(); 
     }
