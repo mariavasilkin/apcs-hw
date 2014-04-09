@@ -16,15 +16,10 @@ public class Driver {
 	stack.push("12");
 	stack.push("one three");
 	stack.push("fourteen");
-
-	System.out.println(stack);
 	while (!stack.isEmpty()){
 	    System.out.println(stack.pop());
 	}
 	System.out.println(stack);
-	stack.push("hello");
-	stack.push("world");
-	System.out.println(stack.peek());
 
     }
 

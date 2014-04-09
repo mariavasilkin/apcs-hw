@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class MyStack {
 
     private String[] stack;
@@ -29,8 +32,7 @@ public class MyStack {
     //UPDATE: I think it's just because I'm using top to indicate the 
     //next free space
     public String pop() {
-	String s = stack[top-1];
-	stack[top-1] = "";
+	String s = peek();
 	top--;
 	return s;
     }

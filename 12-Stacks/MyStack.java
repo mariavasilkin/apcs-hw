@@ -4,7 +4,7 @@ public class MyStack {
     private int top;
 
     public MyStack(){
-	top = 0;
+	top = 0;//points to the next spot to fill
         stack = new String[10];
     }
 
@@ -22,12 +22,9 @@ public class MyStack {
 	}
     }
 
-    //So before, pop was printing null,14,13....3,2,null, and that stopped 
-    //when I changed the stack index to top-1, but I think I kinda worked 
-    //around whatever the real problem was instead of fixing it??
     public String pop() {
 	String s = stack[top-1];
-	stack[top-1] = "";
+	//	stack[top-1] = ""; Not necessary 
 	top--;
 	return s;
     }
@@ -49,7 +46,7 @@ public class MyStack {
 	String tmp = "";
 	for (String s: stack) {
 	    if (s != null) 
-	    tmp += s + ", ";
+	    tmp += s + " ";
 	}
 	return tmp;
     }
