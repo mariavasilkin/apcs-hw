@@ -25,9 +25,6 @@ public class MyStack {
     //So before, pop was printing null,14,13....3,2,null, and that stopped 
     //when I changed the stack index to top-1, but I think I kinda worked 
     //around whatever the real problem was instead of fixing it??
-
-    //UPDATE: I think it's just because I'm using top to indicate the 
-    //next free space
     public String pop() {
 	String s = stack[top-1];
 	stack[top-1] = "";
@@ -43,6 +40,7 @@ public class MyStack {
 	return top == 0;
     }
 
+    //Do you even need this anymore?
     public int getSize() {
 	return stack.length;
     }
