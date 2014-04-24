@@ -1,0 +1,65 @@
+Maria Vasilkin
+GridWorld Part 4
+
+
+Set 7
+1. ArrayList<Actor> getActors()
+void processActors(ArrayList<Actors> actors)
+ArrayList<Location> getMoveLocations()
+Location selectMoveLocation(ArrayList<Location> locs)
+void makeMove (Location loc)
+
+2.A critter gets a list of actors to process, then processes 
+them and uses this info to generate the locations to which it can 
+move. After that, it picks a location from the list and moves there.
+
+3.When it processes a unique set of actors different from the
+ones in the getActors method in critter
+
+4. A critter could randomly select an actor, select an actor based 
+on one or more of the actor's traits, or select the actor based on
+their location relative to the critter. 
+
+5.You need to get the possible locations that the critter can move to
+using getMoveLocation, then choose one of these locations with 
+selectMoveLocation, then move to the selected location with makeMove.
+
+6.There is no Critter constructor because the critter doesn't really
+have it's own traits, I think. 
+
+Set 8
+1. Because chalmeleon critter overrides processActors and makeMove, which 
+are both used in the act() method and effect its outcome.
+
+2. Because it does everything that the regular Critter makeMove does, 
+it just also does something additional.
+
+3. By using the move from the actor class rather than the 
+move method in the critter class.
+
+4. It doesn't need to because it processes the same set of actors as the
+getActors method for Critters states.
+
+5. Actor? Maybe?
+
+6. Dunno.
+
+Set 9
+1. It uses the conventional way of processing actors.
+
+2. It eats anything in the front, right-front, or left-front of it as long as it's 
+not a rock or a critter. 
+
+3. Because of the crab's dietary restrictions, it needs to know that
+the actor is in front, right-front, or left-front of the crab.
+
+4. (4,3); (4,4); (4,5);
+
+5. The crab moves like a critter but with more restrictions, since
+it can only move left or right
+
+6.It turns if neither the spot to its left nor the spot to its
+right are empty.
+
+7. Because they were told not to eat other critters, and they are
+both subclasses of critter so they can't eat eachother.
