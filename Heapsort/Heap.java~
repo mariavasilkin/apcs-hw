@@ -1,0 +1,17 @@
+public class Heap {
+
+    private int[] data;
+    private int[] sorted;
+
+    public Heap (int[] heapData) {
+	data = heapData;
+	sorted = heapData;
+    }
+
+    public int findMax() 
+    
+}	   
+    public void  HeapSort() {
+	
+    }
+}
