@@ -37,13 +37,13 @@ public class BST {
 
     public Node search2 (Node p, int x) {
 	if (p != null && root.getData() == x) {	
-	    return p;
+	    return root;
 	}
 	else if (root.hasChildren()) {
 	    if (x < root.getData()) {
 		return search2(root.getLeft(), x);
 	    }
-	    else return search2(root.getRight(), x);
+	    else return search2(root.getLeft(), x);
 	}
 	else return null;
     }
