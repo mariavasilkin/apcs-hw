@@ -1,0 +1,66 @@
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+	HashMap hash = new HashMap();
+	TreeMap tree = new TreeMap();
+	test =  new ArrayList<Integer>;
+	for (int i = 0; i < 1000; i++) {
+	    test.add((int)(Math.random()*10000));
+	}
+
+	//put(key,value)
+	long hashStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    hash.put(i,test.get(i));
+	}
+	long hashEnd = System.nanoTime();
+	long hashTime = hashEnd - hashStart;  
+	System.out.println("Hash time: " + hashTime);
+
+	long treeStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    tree.put(i,test.get(i));
+	}
+	long treeEnd = System.nanoTime();
+	long treeTime = treeEnd - treeStart;
+	System.out.println("Tree time: " + treeTime);
+
+	//get(key)
+	long hashStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    hash.get(i);
+	}
+	long hashEnd = System.nanoTime();
+	long hashTime = hashEnd - hashStart;  
+	System.out.println("Hash time: " + hashTime);
+
+	long treeStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    tree.get(i);
+	}
+	long treeEnd = System.nanoTime();
+	long treeTime = treeEnd - treeStart;
+	System.out.println("Tree time: " + treeTime);
+
+	//remove(key)
+	long hashStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    hash.remove(i);
+	}
+	long hashEnd = System.nanoTime();
+	long hashTime = hashEnd - hashStart;  
+	System.out.println("Hash time: " + hashTime);
+
+	long treeStart = System.nanoTime();
+	for (int i = 0; i < test.length(); i ++) {
+	    tree.remove(i);
+	}
+	long treeEnd = System.nanoTime();
+	long treeTime = treeEnd - treeStart;
+	System.out.println("Tree time: " + treeTime);
+
+
+
+	
+
+	
